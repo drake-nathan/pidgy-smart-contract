@@ -13,11 +13,13 @@ contract Pidgy is ERC721, Ownable, ERC721Burnable {
 
     constructor() ERC721("Pidgy", "PIDGY") {}
 
-    uint256 public maxSupply = 10;
+    uint256 public maxSupply = 100;
     bool public isMintActive = false;
+    string private _baseTokenURI =
+        "ipfs://bafybeiezy62lrirpowmowthy7lfd7xqki3hi3r53lyj7egc55mzbiw2egi/";
 
-    function getMintStatus() public view returns (bool) {
-        return isMintActive;
+    function _baseURI() internal view virtual override returns (string memory) {
+        return _baseTokenURI;
     }
 
     function toggleMint() external onlyOwner {
