@@ -6,22 +6,22 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract HdlLogoTest is ERC721, Ownable, ERC721Burnable {
+contract Pidgy is ERC721, Ownable, ERC721Burnable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
-    uint256 public maxSupply = 5000;
+    constructor() ERC721("Pidgy", "PIDGY") {}
+
+    uint256 public maxSupply = 10;
     bool public isMintActive = false;
 
-    constructor() ERC721("HdlLogoTest", "PIDGY") {}
-
-    function openMint() external onlyOwner {
-        isMintActive = true;
+    function getMintStatus() public view returns (bool) {
+        return isMintActive;
     }
 
-    function closeMint() external onlyOwner {
-        isMintActive = false;
+    function toggleMint() external onlyOwner {
+        isMintActive = true;
     }
 
     function safeMint(address to) public {
