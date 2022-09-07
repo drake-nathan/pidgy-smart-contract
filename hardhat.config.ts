@@ -8,22 +8,21 @@ dotenv.config();
 
 const rinkebyRpcUrl = process.env.RINKEBY_RPC_URL;
 const goerliRpcUrl = process.env.GOERLI_RPC_URL;
+
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY;
+
+const privateKey = process.env.PRIVATE_KEY as string;
 
 const config: HardhatUserConfig = {
   solidity: "0.8.9",
   networks: {
     rinkeby: {
       url: rinkebyRpcUrl,
-      accounts: [
-        "e3a54d16dcba299e7d0b5d9d8b5f6cd5cb5c17f5694ccb5c1798cf8d9cf4e486",
-      ],
+      accounts: [privateKey],
     },
     goerli: {
       url: goerliRpcUrl,
-      accounts: [
-        "e3a54d16dcba299e7d0b5d9d8b5f6cd5cb5c17f5694ccb5c1798cf8d9cf4e486",
-      ],
+      accounts: [privateKey],
     },
   },
   etherscan: {
