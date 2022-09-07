@@ -31,9 +31,9 @@ contract HdlLogo is ERC721, Ownable, ERC721Burnable {
         isMintActive = !isMintActive;
     }
 
-    // function checkHasMinted(address _address) external view returns (bool) {
-    //     return _hasMinted[_address];
-    // }
+    function checkHasMinted(address _address) external view returns (bool) {
+        return _hasMinted[_address];
+    }
 
     function safeMint(address to) public {
         uint256 tokenId = _tokenIdCounter.current();
