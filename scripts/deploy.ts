@@ -1,11 +1,11 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const Pidgy = await ethers.getContractFactory("Pidgy");
-  console.log("Deploying Pidgy...");
-  const pidgy = await Pidgy.deploy();
-  await pidgy.deployed();
-  console.log("Pidgy deployed to:", pidgy.address);
+  const HdlLogo = await ethers.getContractFactory("HdlLogo");
+  console.log("Deploying HdlLogo...");
+  const hdlLogo = await HdlLogo.deploy();
+  await hdlLogo.deployed();
+  console.log("HdlLogo deployed to:", hdlLogo.address);
 }
 
 main()
@@ -15,4 +15,4 @@ main()
     process.exit(1);
   });
 
-// 0xd230BB921c8AeF57bfe34b2D673d4f3Cf566dd5c
+// 0xFfb31563Eb3Bec1fDcB7321766d3EaF773CA6989

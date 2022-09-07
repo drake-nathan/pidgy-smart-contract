@@ -7,6 +7,7 @@ import "@nomiclabs/hardhat-etherscan";
 dotenv.config();
 
 const rinkebyRpcUrl = process.env.RINKEBY_RPC_URL;
+const goerliRpcUrl = process.env.GOERLI_RPC_URL;
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY;
 
 const config: HardhatUserConfig = {
@@ -14,6 +15,12 @@ const config: HardhatUserConfig = {
   networks: {
     rinkeby: {
       url: rinkebyRpcUrl,
+      accounts: [
+        "e3a54d16dcba299e7d0b5d9d8b5f6cd5cb5c17f5694ccb5c1798cf8d9cf4e486",
+      ],
+    },
+    goerli: {
+      url: goerliRpcUrl,
       accounts: [
         "e3a54d16dcba299e7d0b5d9d8b5f6cd5cb5c17f5694ccb5c1798cf8d9cf4e486",
       ],
